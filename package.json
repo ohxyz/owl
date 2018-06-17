@@ -1,0 +1,22 @@
+{
+  "name": "owl",
+  "version": "0.0.1",
+  "description": "Overwatch League related stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohxyz/owl.git"
+  },
+  "keywords": [
+    "owl"
+  ],
+  "author": "ohxyz",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/ohxyz/owl/issues"
+  },
+  "homepage": "https://github.com/ohxyz/owl#readme"
+}
