@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Player } from '../../models/player/player';
+import { catchError } from 'rxjs/operators';
 
 @Injectable( {
 
@@ -15,12 +15,14 @@ export class PlayerService {
 
     }
 
-    getAllPlayers (): Observable<Player[]> {
+    getAllPlayers (): Observable<any> {
 
-        let players = this.http.get<Player[]>( this.playersUrl );
+        let playersObservable = this
+                .http
+                .get<any>( this.playersUrl );
 
-        console.log( 3, players );
+        console.log( 3, playersObservable );
 
-        return players;
+        return playersObservable;
     }
 }

@@ -1,0 +1,9 @@
+.player-list__row {
+
+}
+
+.player-list__data {
+
+    display: inline-block;
+    width: 33%;
+}

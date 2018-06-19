@@ -27,10 +27,12 @@ export class PlayerListComponent implements OnInit {
 
         this.playerService
             .getAllPlayers()
-            .subscribe( players => { 
+            .subscribe( object => { 
 
-                this.players = players;
-                console.log( 4, this.players );
-            } );
+                this.players = object.data;
+
+                console.log( 1, this.players );
+            } )
+
     }
 }
