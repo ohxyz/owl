@@ -33,6 +33,5 @@ export class PlayerListComponent implements OnInit {
 
                 console.log( 1, this.players );
             } )
-
     }
 }

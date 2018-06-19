@@ -18,7 +18,11 @@ app.get( '/players', ( request, response ) => {
         'Content-Type': 'text/json' 
     } );
 
-    response.send( playersContent );
+    setTimeout( () => {
+
+        response.send( playersContent );
+
+    }, 3000 );
 
 } );
 
