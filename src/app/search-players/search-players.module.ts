@@ -1,20 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { SearchPlayersComponent } from './search-players.component';
-import { PlayerFilterComponent } from '../player-filter/player-filter.component';
+import { HttpClientModule } from '@angular/common/http';
 import { PlayerListComponent } from '../player-list/player-list.component';
 
 @NgModule({
     imports: [
-        CommonModule,
+        HttpClientModule
     ],
     declarations: [
-        PlayerFilterComponent,
         PlayerListComponent
     ],
     exports: [
-        PlayerFilterComponent,
         PlayerListComponent
     ]
 })
