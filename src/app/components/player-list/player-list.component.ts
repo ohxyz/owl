@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayerService } from '../player.service';
-import { Player } from '../data-models/player/player';
+import { PlayerService } from '../../services/player/player.service';
+import { Player } from '../../models/player/player';
 import { Observable } from 'rxjs';
 
 @Component( {
@@ -27,6 +27,10 @@ export class PlayerListComponent implements OnInit {
 
         this.playerService
             .getAllPlayers()
-            .subscribe( players => this.players = players );
+            .subscribe( players => { 
+
+                this.players = players;
+                console.log( 4, this.players );
+            } );
     }
 }

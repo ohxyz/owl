@@ -2,17 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { SearchPlayersComponent } from './search-players/search-players.component';
-import { SearchPlayersModule } from './search-players/search-players.module';
+import { PlayersModule } from './modules/players/players.module';
 
 @NgModule( {
     imports: [
         BrowserModule,
-        SearchPlayersModule,
+        PlayersModule,
     ],
     declarations: [
         AppComponent,
-        SearchPlayersComponent,
     ],
     providers: [],
     bootstrap: [ AppComponent ]
