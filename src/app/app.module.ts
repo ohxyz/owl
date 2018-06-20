@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PlayersModule } from './modules/players/players.module';
 
+import { f } from './example.js';
+
 @NgModule( {
     imports: [
         BrowserModule,
@@ -15,4 +17,10 @@ import { PlayersModule } from './modules/players/players.module';
     providers: [],
     bootstrap: [ AppComponent ]
 } )
-export class AppModule { }
+export class AppModule {
+
+    constructor() {
+
+        f( 'xxxxxxx' );
+    }
+}

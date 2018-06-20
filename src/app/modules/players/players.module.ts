@@ -23,4 +23,10 @@ import { CommonModule } from '@angular/common';
         PlayerSearchBoxComponent
     ]
 } )
-export class PlayersModule { }
+export class PlayersModule { 
+
+    constructor() {
+
+        console.log( 'player module constructor' );
+    }
+}
