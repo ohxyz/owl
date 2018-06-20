@@ -15,14 +15,11 @@ export class PlayerService {
 
     }
 
-    getAllPlayers (): Observable<any> {
+    getAllPlayersObservable (): Observable<any> {
 
-        let playersObservable = this
-                .http
-                .get<any>( this.playersUrl );
+        let observable = this.http
+                             .get<any>( this.playersUrl );
 
-        console.log( 3, playersObservable );
-
-        return playersObservable;
+        return observable;
     }
 }

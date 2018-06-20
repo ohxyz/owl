@@ -7,14 +7,15 @@ import { Observable } from 'rxjs';
 
     selector: 'app-player-list',
     templateUrl: './player-list.component.html',
-    styleUrls: ['./player-list.component.scss']
+    styleUrls: [ './player-list.component.scss' ]
 
 } )
 export class PlayerListComponent implements OnInit {
 
     players: Player[];
 
-    constructor( private playerService: PlayerService ) { 
+    constructor( private playerService: PlayerService ) {
+
 
     }
 
@@ -26,12 +27,29 @@ export class PlayerListComponent implements OnInit {
     getAllPlayers(): void {
 
         this.playerService
-            .getAllPlayers()
+            .getAllPlayersObservable()
             .subscribe( object => { 
 
                 this.players = object.data;
+            } );
+    }
 
-                console.log( 1, this.players );
-            } )
+    sortByPlayerProp( prop: string, defaultProp = 'name' ): void {
+
+        this.players = this.players.sort( ( player1, player2 ) => {
+
+            if (  player1[ prop ] === player2[ prop ] ) {
+
+                return player1[ defaultProp ].localeCompare( player2[ defaultProp ] )
+            }
+
+            if ( typeof player1[ prop ] === 'number' ) {
+
+                return player1[ prop ] - player2[ prop ];
+            }
+
+            return player1[ prop ].localeCompare( player2[ prop ] );
+
+        } );
     }
 }

@@ -1,15 +1,19 @@
-<div class="player-list">
+<div *ngIf="players" class="player-list">
     <div class="player-list__header">
         <div class="player-list__row">
-            <span class="player-list__data">Name</span>
-            <span class="player-list__data">Role</span>
-            <span class="player-list__data">Team</span>
+            <span class="player-list__data" (click)="sortByPlayerProp( 'name' )">Name</span>
+            <span class="player-list__data" (click)="sortByPlayerProp( 'damage_avg_per_10m' )">DMG/10m</span>
+            <span class="player-list__data" (click)="sortByPlayerProp( 'role' )">Role</span>
+            <span class="player-list__data" (click)="sortByPlayerProp( 'team' )">Team</span>
         </div>
     </div>
     <div class="player-list__body">
         <div class="player-list__row" *ngFor="let player of players">
             <span class="player-list__data">
                 <span class="player__name">{{ player.name }}</span>
+            </span>
+            <span class="player-list__data">
+                <span class="player__dmg">{{ player.damage_avg_per_10m }}</span>
             </span>
             <span class="player-list__data">
                 <span class="player__role">{{ player.role }}</span>

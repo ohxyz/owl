@@ -1,9 +1,11 @@
+$col_width: 100% / 4;
+
 .player-list {
 
     &__data {
 
         display: inline-block;
-        width: 33%;
+        width: $col_width;
         background-color: #eeeeee;
     }
 }

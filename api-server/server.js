@@ -22,11 +22,11 @@ app.get( '/players', ( request, response ) => {
 
         response.send( playersContent );
 
-    }, 3000 );
+    }, 0 );
 
 } );
 
 app.listen( PORT, () => { 
 
-    console.log( `Server start on port: ${PORT}.` );
+    console.log( `API Server starts at port: ${PORT}` );
 } );
