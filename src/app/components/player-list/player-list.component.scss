@@ -2,10 +2,28 @@ $col_width: 100% / 4;
 
 .player-list {
 
-    &__data {
+    &__header, &__body {
 
-        display: inline-block;
-        width: $col_width;
-        background-color: #eeeeee;
+        &__row__data {
+
+            display: inline-block;
+            width: $col_width;
+            background-color: #eeeeee;
+        }
+    }
+
+    &__header {
+
+        &__row {
+
+            line-height: 2;
+            user-select: none;
+        }
+
+        &__row__data {
+
+            cursor: pointer;
+            background-color: #dddddd;
+        }
     }
 }

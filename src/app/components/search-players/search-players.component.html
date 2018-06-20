@@ -1,3 +1,5 @@
-<h1>Player filter</h1>
-<app-player-list></app-player-list>
+<h3>Seach Players Template</h3>
+<app-player-search-box [term]="parentTerm" (termSearched)="onSearch($event)"></app-player-search-box>
+<app-player-list [textFiltered]="parentFiltered"></app-player-list>
+
 
