@@ -10,19 +10,17 @@ import { Player } from '../../models/player/player';
 } )
 export class PlayerSearchBoxComponent {
 
-    @Input( "term" ) searchTerm: string = '';
-    @Output() termSearched = new EventEmitter<any>();
+    searchTerm: string = '';
+    @Output() search = new EventEmitter<any>();
 
     ngOnInit() {
 
         
     }
 
-    onSearchButtonClick() {
+    onSearchTermChange() {
 
-        console.log( 5, this.searchTerm );
-
-        this.termSearched.emit( this.searchTerm );
+        this.search.emit( this.searchTerm );
     }
 
     onClearButtonClick() {

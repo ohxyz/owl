@@ -1,5 +1,4 @@
 <div class="player-search-box">
-    <input class="player-search-box__input" [(ngModel)]="searchTerm" placeholder="Enter...">
-    <button class="player-search-box__search-button" (click)="onSearchButtonClick()">Search</button>
+    <input class="player-search-box__input" [(ngModel)]="searchTerm" (input)="onSearchTermChange()" placeholder="Enter...">
     <button class="player-search-box__clear-button" (click)="onClearButtonClick()">Clear</button>
 </div>

@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPlayersComponent implements OnInit {
 
-    parentTerm: string = 'Parent';
-    parentFiltered: string = 'Filtered';
+    searchTerm: string = '';
 
     constructor() { }
 
@@ -20,7 +19,7 @@ export class SearchPlayersComponent implements OnInit {
     onSearch( text ) {
 
         console.log( 'onSearch', text );
-        this.parentFiltered = text;
+        this.searchTerm = text;
     }
 
 }

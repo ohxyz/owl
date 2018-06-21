@@ -12,11 +12,12 @@ import { Observable } from 'rxjs';
 } )
 export class PlayerListComponent {
 
-    players: Player[];
+    players: Player[] = [];
+    allPlayers: Player[] = [];
     sortFlag: number = 1;
     lastPropSorted: string = '';
 
-    @Input( 'textFiltered' ) filtered: string;
+    @Input( 'searchTerm' ) filtered: string;
 
     constructor( private playerService: PlayerService ) {
 
@@ -33,6 +34,29 @@ export class PlayerListComponent {
     ngOnChanges() {
 
         console.log( 'player-list onChange', this.filtered );
+
+        let props: string[] = [ 'name', 'team', 'role' ];
+        
+        this.players = this.filterPlayers( this.allPlayers, this.filtered, props );
+    }
+
+    filterPlayers( players: Player[], text: string, props: string[] ){
+
+        let playersFiltered: Player[] = [];
+
+        for ( let eachPlayer of players ) {
+
+            for ( let prop of props ) {
+
+                if ( eachPlayer[ prop ].toLowerCase().indexOf( text.toLowerCase() ) >= 0 ) {
+
+                    playersFiltered.push( eachPlayer );
+                    break;
+                }
+            }
+        }
+
+        return playersFiltered;
     }
 
     getAllPlayers(): void {
@@ -41,7 +65,8 @@ export class PlayerListComponent {
             .getAllPlayersObservable()
             .subscribe( object => { 
 
-                this.players = object.data.slice( 10, 20 );
+                this.allPlayers = object.data.slice( 0, 30 );
+                this.players = this.allPlayers;
             } );
     }
 
